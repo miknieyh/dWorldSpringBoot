@@ -13,4 +13,9 @@ public class TestController {
         return "dir/test";
     }
 
+    @GetMapping
+    public String test2(){
+        return "test";
+    }
+
 }
