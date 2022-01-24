@@ -11,7 +11,8 @@ public class L7healthCheckController {
 
 
     @RequestMapping("/L7check")
-    public @ResponseBody String L7check(){
+    public @ResponseBody
+    String L7check() {
         return "OK";
     }
 }

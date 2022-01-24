@@ -1,13 +1,11 @@
 <html>
 <head>
-
-
-<title>test
-</title>
+    <title>test
+    </title>
 </head>
 
 <body>
 test
-</body
+</body>
 
 </html>
