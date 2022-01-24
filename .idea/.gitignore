@@ -12,6 +12,7 @@
 *.iml
 *.iws
 *.xml
+misc.xml
 
 # Mac
 .DS_Store

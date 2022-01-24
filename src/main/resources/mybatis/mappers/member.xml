@@ -16,7 +16,7 @@
         FROM
             MEMBER
         WHERE
-            userid = #{id}
+            id = #{id}
     </select>
 
 
