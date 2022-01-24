@@ -1,3 +1,9 @@
-com\example\dWorld\BO\MemberBO.class
-com\example\dWorld\DAO\MemberDAO.class
-model\Member.class
+com\example\dWorld\model\Member.class
+com\example\dWorld\model\Result.class
+com\example\dWorld\controller\TestController.class
+com\example\dWorld\model\ResultCode.class
+com\example\dWorld\Application.class
+com\example\dWorld\controller\api\MemberController.class
+com\example\dWorld\controller\api\L7healthCheckController.class
+com\example\dWorld\util\CommonUtil.class
+com\example\dWorld\controller\api\AbstractController.class
