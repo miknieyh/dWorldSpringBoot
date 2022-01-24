@@ -11,9 +11,9 @@ import java.sql.Timestamp;
 @Setter
 public class Member {
     private int idx;
-    private String userid;
+    private String id;
     private String name;
-    private String passwd;
+    private String password;
     private String phone;
     private String nickname;
     private Timestamp wdate;

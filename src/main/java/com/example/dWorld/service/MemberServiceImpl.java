@@ -26,6 +26,7 @@ public class MemberServiceImpl implements MemberService {
         } catch (SQLException e) {
             return ResultCode.DBError.result();
         } catch (Exception e) {
+            e.printStackTrace();
             return ResultCode.ETCError.result();
         }
     }
@@ -38,6 +39,7 @@ public class MemberServiceImpl implements MemberService {
         } catch (SQLException e) {
             return ResultCode.DBError.result();
         } catch (Exception e) {
+            e.printStackTrace();
             return ResultCode.ETCError.result();
         }
 

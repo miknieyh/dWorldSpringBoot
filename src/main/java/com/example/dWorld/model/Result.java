@@ -5,8 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
-@Setter
 @ToString
 public class Result<T> {
     private final T resultObject;
@@ -18,4 +16,11 @@ public class Result<T> {
         this.resultCode = resultCode;
     }
 
+    public T getResultObject() {
+        return resultObject;
+    }
+
+    public ResultCode getResultCode() {
+        return resultCode;
+    }
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/members")
@@ -22,17 +23,17 @@ public class MemberController extends AbstractController {
 
     @RequestMapping("/all")
     public @ResponseBody
-    JSONObject getMembers() {
+    Map<String, Object> getMembers() {
         Result<List<Member>> result = memberService.getMembers();
-        return returnJSONObject(result);
+        return returnMap(result);
     }
 
 
     @RequestMapping("/member/{id}")
     public @ResponseBody
-    JSONObject getMembers(@PathVariable String id) {
+    Map<String, Object> getMembers(@PathVariable String id) {
         Result<Member> result = memberService.getMember(id);
-        return returnJSONObject(result);
+        return returnMap(result);
     }
 
 
