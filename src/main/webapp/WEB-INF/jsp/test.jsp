@@ -1,9 +1,0 @@
-<html>
-<head>
-    <title>test</title>
-</head>
-<body>
-test
-</body>
-
-</html>

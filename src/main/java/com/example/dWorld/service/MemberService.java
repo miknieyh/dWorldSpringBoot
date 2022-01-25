@@ -10,4 +10,6 @@ public interface MemberService {
     Result<List<Member>> getMembers();
 
     Result<Member> getMember(String id);
+
+    Result<Member> login(String id, String passwd);
 }

@@ -50,5 +50,30 @@ public class MemberServiceImpl implements MemberService {
         return ResultCode.Success.result(member);
     }
 
+    @Override
+    public Result<Member> login(String id, String passwd){
+        int stat = -1;
+        int idx = -1;
+        Member member = null;
+        try{
+            String passwd_ok = memberMapper.findMember(id).getPasswd();
+            if(passwd_ok.equals(passwd)){
+                stat = memberMapper.findMember(id).getStat();
+                idx = memberMapper.findMember(id).getIdx();
+                System.out.println("로그인 성공");
+            }else{
+                idx=-1;
+                System.out.println("비밀번호가 틀렸습니다");
+            }
+            member = new Member(idx,stat);
+
+        }catch (SQLException e) {
+            return ResultCode.DBError.result();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResultCode.ETCError.result();
+        }
+        return ResultCode.Success.result(member);
+    }
 
 }
