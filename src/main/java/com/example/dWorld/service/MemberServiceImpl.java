@@ -1,6 +1,7 @@
 package com.example.dWorld.service;
 
 
+import com.example.dWorld.VO.MemberVO;
 import com.example.dWorld.mapper.MemberMapper;
 import com.example.dWorld.model.Member;
 import com.example.dWorld.model.Result;
@@ -32,7 +33,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public Result<Member> getMember(String id) {
+    public Result<MemberVO> getMember(String id) {
         Member member = null;
         try {
             member = memberMapper.findMember(id);
@@ -47,33 +48,39 @@ public class MemberServiceImpl implements MemberService {
             return ResultCode.NOT_EXIST_USER.result();
         }
 
-        return ResultCode.Success.result(member);
+        return ResultCode.Success.result(
+                MemberVO.builder()
+                .name(member.getName())
+                .nickname(member.getNickname())
+                .build()
+        );
     }
 
     @Override
-    public Result<Member> login(String id, String passwd){
+    public Result<Member> login(String id, String passwd) {
         int stat = -1;
         int idx = -1;
         Member member = null;
-        try{
-            String passwd_ok = memberMapper.findMember(id).getPasswd();
-            if(passwd_ok.equals(passwd)){
-                stat = memberMapper.findMember(id).getStat();
-                idx = memberMapper.findMember(id).getIdx();
-                System.out.println("로그인 성공");
-            }else{
-                idx=-1;
-                System.out.println("비밀번호가 틀렸습니다");
+        try {
+            member = memberMapper.findMember(id);
+            if (member == null) {
+                return ResultCode.NOT_EXIST_USER.result();
             }
-            member = new Member(idx,stat);
 
-        }catch (SQLException e) {
+            if (!passwd.equals(member.getPasswd())) {
+                System.out.println("비밀번호가 틀렸습니다");
+                return ResultCode.FAIL.result();
+            }
+
+
+            member.setPasswd("");
+            return ResultCode.Success.result(member);
+        } catch (SQLException e) {
             return ResultCode.DBError.result();
         } catch (Exception e) {
             e.printStackTrace();
             return ResultCode.ETCError.result();
         }
-        return ResultCode.Success.result(member);
     }
 
 }

@@ -18,7 +18,7 @@
     <repositories>
         <repository>
             <id>oracle</id>
-            <url>http://maven.jahia.org/maven2</url>
+            <url>https://maven.jahia.org/maven2</url>
         </repository>
     </repositories>
 
@@ -101,6 +101,17 @@
             <artifactId>json-lib-ext-spring</artifactId>
             <version>1.0.2</version>
         </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+
 
     </dependencies>
 

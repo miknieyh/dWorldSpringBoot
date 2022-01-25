@@ -1,5 +1,6 @@
 package com.example.dWorld.controller.api;
 
+import com.example.dWorld.VO.MemberVO;
 import com.example.dWorld.model.Member;
 import com.example.dWorld.model.Result;
 import com.example.dWorld.service.MemberService;
@@ -32,7 +33,7 @@ public class MemberController extends AbstractController {
     @RequestMapping("/member/{id}")
     public @ResponseBody
     Map<String, Object> getMembers(@PathVariable String id) {
-        Result<Member> result = memberService.getMember(id);
+        Result<MemberVO> result = memberService.getMember(id);
         return returnMap(result);
     }
 

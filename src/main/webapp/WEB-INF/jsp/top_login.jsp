@@ -10,7 +10,7 @@
 <header style="height:100%;">
 		<div class="h-75 d-flex justify-content-around mt-1">
 			<div class="">
-				<a href="main"><img src="resources/img/logo.png" alt="logo" ></a>
+				<a href="main"><img src="./resources/img/logo.png" alt="logo" ></a>
 			</div>
 			<div class="w-25 ">
 				<div class="h-25"></div>

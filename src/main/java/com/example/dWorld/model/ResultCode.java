@@ -7,10 +7,11 @@ import lombok.ToString;
 @ToString
 public enum ResultCode {
     Success(0, "성공"),
-
+    FAIL(1, "실패"),
 
     //100 번대 (회원관련)
     NOT_EXIST_USER(100, "존재하지 않는 유저입니다."),
+
 
 
 
