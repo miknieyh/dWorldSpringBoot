@@ -37,6 +37,24 @@ public class MemberServiceImpl implements MemberService {
         Member member = null;
         try {
             member = memberMapper.findMember(id);
+            return ResultCode.Success.result(MemberVO.builder()
+                                                    .name(member.getName())
+                                                    .nickname(member.getNickname())
+                                                    .build());
+        } catch (SQLException e) {
+            return ResultCode.DBError.result();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResultCode.ETCError.result();
+        }
+    }
+
+    @Override
+    public Result<Member> login(String id, String passwd) {
+
+        Member member = null;
+        try {
+            member = memberMapper.findMember(id);
         } catch (SQLException e) {
             return ResultCode.DBError.result();
         } catch (Exception e) {
@@ -49,38 +67,11 @@ public class MemberServiceImpl implements MemberService {
         }
 
         return ResultCode.Success.result(
-                MemberVO.builder()
-                .name(member.getName())
-                .nickname(member.getNickname())
-                .build()
+                Member.builder()
+                        .idx(member.getIdx())
+                        .stat(member.getStat())
+                        .build()
         );
-    }
-
-    @Override
-    public Result<Member> login(String id, String passwd) {
-        int stat = -1;
-        int idx = -1;
-        Member member = null;
-        try {
-            member = memberMapper.findMember(id);
-            if (member == null) {
-                return ResultCode.NOT_EXIST_USER.result();
-            }
-
-            if (!passwd.equals(member.getPasswd())) {
-                System.out.println("비밀번호가 틀렸습니다");
-                return ResultCode.FAIL.result();
-            }
-
-
-            member.setPasswd("");
-            return ResultCode.Success.result(member);
-        } catch (SQLException e) {
-            return ResultCode.DBError.result();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResultCode.ETCError.result();
-        }
     }
 
 }

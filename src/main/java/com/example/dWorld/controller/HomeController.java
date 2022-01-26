@@ -10,4 +10,9 @@ public class HomeController {
     public String main() {
         return "index";
     }
+
+    @RequestMapping(value="/join")
+    public String join() {
+        return "join";
+    }
 }

@@ -28,7 +28,7 @@ header{
     height: 800px;
 }
 .main2{
-    width: 4    00px;
+    width: 400px;
 }
 .small{
     font-size:smaller;
@@ -46,9 +46,7 @@ footer p{
 .grey{
     background-color: grey;
 }
-.footnav a:hover{
-    color: white;
-}
+
 .pa{
     position: absolute;
     display: none;
