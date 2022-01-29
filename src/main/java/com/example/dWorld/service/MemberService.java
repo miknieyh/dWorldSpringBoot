@@ -13,4 +13,6 @@ public interface MemberService {
     Result<MemberVO> getMember(String id);
 
     Result<Member> login(String id, String passwd);
+
+    Result<Member> profile(int idx);
 }

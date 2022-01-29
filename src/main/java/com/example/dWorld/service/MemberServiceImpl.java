@@ -88,4 +88,25 @@ public class MemberServiceImpl implements MemberService {
         );
     }
 
+    @Override
+    public Result<Member> profile(int idx) {
+
+        Member member = null;
+        try {
+            member = memberMapper.profile(idx);
+        } catch (SQLException e) {
+            return ResultCode.DBError.result();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResultCode.ETCError.result();
+        }
+        return ResultCode.Success.result(
+                Member.builder()
+                        .id(member.getId())
+                        .name(member.getName())
+                        .nickname(member.getNickname())
+                        .build()
+        );
+    }
+
 }

@@ -15,9 +15,9 @@ public class TestController {
 
     @GetMapping
     @RequestMapping("/test")
-    public String test(Model model, @RequestParam Map<String, String> param){
-        String invite  = param.get("invite");
-        String userid  = param.get("userid");
+        public String test(Model model, @RequestParam Map<String, String> param){
+            String invite  = param.get("invite");
+            String userid  = param.get("userid");
         String passwd  = param.get("passwd");
 
         model.addAllAttributes(param);

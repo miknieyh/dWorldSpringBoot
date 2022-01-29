@@ -19,16 +19,15 @@
             id = #{id}
     </select>
 
-    <select id="login" resultType="com.example.dWorld.model.Member">
+
+    <select id="profile" resultType="com.example.dWorld.model.Member">
         SELECT
-            *
+               ID,NAME,NICKNAME
         FROM
-            MEMBER
+             MEMBER
         WHERE
-            id = #{id}
+              IDX= #{idx}
     </select>
-
-
 
 
 

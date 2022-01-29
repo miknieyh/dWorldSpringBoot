@@ -30,7 +30,7 @@
 						<img alt="프로필 이미지" src="img/profile.png">
 					</div>
 					<div class="align-self-center ms-3">
-						<small>${m.userid}</small> <br>${m.name}<br> <b>${m.nickname}</b>
+						<small>${m.id}</small> <br>${m.name}<br> <b>${m.nickname}</b>
 					</div>
 				</div>
 

@@ -1,8 +1,8 @@
 $login = {
-    baseUrl: 'localhost:8081/api',
-    login: function () {
-        var userid = document.getElementById('userid').value;
-        var passwd = document.getElementById('passwd').value;
+            baseUrl: 'localhost:8081/api',
+            login: function () {
+                var userid = document.getElementById('userid').value;
+                var passwd = document.getElementById('passwd').value;
         if (userid == '') {
             alert("아이디를 입력해주세요");
             return;

@@ -10,7 +10,7 @@
 <header style="height:100%;">
 		<div class="h-75 d-flex justify-content-around mt-1">
 			<div class="">
-				<a href="main"><img src="img/logo.png" alt="logo" ></a>
+				<a href="./main"><img src="img/logo.png" alt="logo" ></a>
 			</div>
 			<div class="w-25 ">
 				<div class="h-25"></div>
@@ -18,8 +18,8 @@
 
 			<div class="d-flex">
 				<div class="mt-5">
-					<a href="mypage.jsp"><button type="button" class="btn btn-dark">내정보</button></a>
-					<a href="./"><button type="button" class="btn btn-dark">로그아웃</button></a>
+					<a href="./mypage"><button type="button" class="btn btn-dark">내정보</button></a>
+					<a href="./logout"><button type="button" class="btn btn-dark">로그아웃</button></a>
 				</div>
 
 			</div>
@@ -33,8 +33,8 @@
 					<li class="nav-item mt-4"><a class="nav-link fw-bolder"
 						aria-current="page" href="#">새일기</a></li>
 					<ul class="bg-white pa nav flex-column p-4">
-						<li><a href="main?flag=write_group">공유일기</a></li>
-						<li><a href="main?flag=write_my">비밀일기</a></li>
+						<li><a href="./main?flag=write_group">공유일기</a></li>
+						<li><a href="./main?flag=write_my">비밀일기</a></li>
 						<li><a href="#">공개일기</a></li>
 					</ul>
 				</div>

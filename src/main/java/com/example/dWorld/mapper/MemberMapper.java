@@ -13,4 +13,6 @@ public interface MemberMapper {
 
     Member findMember(String id) throws SQLException;
 
+    Member profile(int idx) throws SQLException;
+
 }
