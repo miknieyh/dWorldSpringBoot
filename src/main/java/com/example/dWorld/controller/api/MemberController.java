@@ -3,13 +3,11 @@ package com.example.dWorld.controller.api;
 import com.example.dWorld.VO.MemberVO;
 import com.example.dWorld.model.Member;
 import com.example.dWorld.model.Result;
+import com.example.dWorld.model.ResultCode;
 import com.example.dWorld.service.MemberService;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -34,6 +32,16 @@ public class MemberController extends AbstractController {
     public @ResponseBody
     Map<String, Object> getMembers(@PathVariable String id) {
         Result<MemberVO> result = memberService.getMember(id);
+        return returnMap(result);
+    }
+
+    @PostMapping("/member")
+    public @ResponseBody
+    Map<String, Object> login(@RequestBody Map<String, String> param) {
+        String userid= param.get("userid");
+        String passwd= param.get("passwd");
+        Result<Member> result = memberService.login(userid, passwd);
+
         return returnMap(result);
     }
 

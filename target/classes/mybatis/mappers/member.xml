@@ -19,6 +19,15 @@
             id = #{id}
     </select>
 
+    <select id="login" resultType="com.example.dWorld.model.Member">
+        SELECT
+            *
+        FROM
+            MEMBER
+        WHERE
+            id = #{id}
+    </select>
+
 
 
 

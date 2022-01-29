@@ -4,7 +4,7 @@
 <header>
     <div class="h-75 d-flex justify-content-around mt-1">
         <div class="mt-2">
-            <a href="index.jsp"><img src="./resources/img/logo.png" alt="logo"></a>
+            <a href="index.jsp"><img src="img/logo.png" alt="logo"></a>
         </div>
         <div class="w-25 ">
             <div class="imb-3 h-25 mt-3"></div>

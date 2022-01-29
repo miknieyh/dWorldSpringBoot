@@ -11,7 +11,7 @@ public enum ResultCode {
 
     //100 번대 (회원관련)
     NOT_EXIST_USER(100, "존재하지 않는 유저입니다."),
-
+    PASSWD_NOT_CORRECT(101,"비밀번호가 틀렸습니다."),
 
 
 

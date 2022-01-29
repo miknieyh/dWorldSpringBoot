@@ -6,6 +6,8 @@
 
 <body>
 test
+
+${invite}
 </body>
 
 </html>

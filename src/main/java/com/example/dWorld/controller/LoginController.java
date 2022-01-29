@@ -15,36 +15,33 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/loginOk")
-public class LoginController extends AbstractController  {
+public class LoginController {
 
     @Autowired
     private MemberService memberService;
 
 
     @GetMapping
-    public String loginOk(HttpServletRequest request ,@RequestParam String invite , @RequestParam String userid, @RequestParam String passwd){
-        Result<Member> result = memberService.login(userid,passwd);
+    public String loginOk(HttpServletRequest request, @RequestParam Map<String, String> param) {
         HttpSession session = request.getSession();
-        int idx = result.getResultObject().getIdx();
-        int stat = result.getResultObject().getStat();
+        String invite = param.get("invite");
+        int idx = Integer.parseInt(param.get("idx"));
+        int stat = Integer.parseInt(param.get("stat"));
 
-        if (idx == -1){
+        if (idx == -1) {
             System.out.println("로그인 실패");
             return "redirect:/index";
-        }else{
-            int g_idx = invite.equals("") ? -1: Integer.parseInt(invite);
-            if (g_idx != -1){
+        } else {
+            int g_idx = invite.equals("") ? -1 : Integer.parseInt(invite);
+            if (g_idx != -1) {
                 //memberService.groupInvite(idx,g_idx);
             }
-            session.setAttribute("idx",idx);
-            session.setAttribute("stat",stat);
+            session.setAttribute("idx", idx);
+            session.setAttribute("stat", stat);
             return "redirect:/main";
 
         }
     }
-
-
-
 
 
 }

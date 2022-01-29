@@ -31,7 +31,10 @@ public class MemberServiceImpl implements MemberService {
             return ResultCode.ETCError.result();
         }
     }
-
+    /**
+     *
+     * @see com.example.dWorld.service.MemberService#getMember(String)
+     */
     @Override
     public Result<MemberVO> getMember(String id) {
         Member member = null;
@@ -49,6 +52,13 @@ public class MemberServiceImpl implements MemberService {
         }
     }
 
+    /**
+     *
+     * @param id
+     * @param passwd
+     * @return
+     * @see com.example.dWorld.service.MemberService#login(String, String)
+     */
     @Override
     public Result<Member> login(String id, String passwd) {
 
@@ -64,6 +74,10 @@ public class MemberServiceImpl implements MemberService {
 
         if (member == null) {
             return ResultCode.NOT_EXIST_USER.result();
+        }
+
+        if(!passwd.equals(member.getPasswd())){
+            return ResultCode.PASSWD_NOT_CORRECT.result();
         }
 
         return ResultCode.Success.result(
