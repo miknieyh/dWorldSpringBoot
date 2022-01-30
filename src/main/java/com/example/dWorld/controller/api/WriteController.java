@@ -3,6 +3,7 @@ package com.example.dWorld.controller.api;
 import com.example.dWorld.model.Result;
 import com.example.dWorld.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,12 +19,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
 
-@RestController
-@RequestMapping("/write")
+@Controller
 public class WriteController extends AbstractController {
     @Autowired
     private BoardService boardService;
 
+    @RequestMapping("/write")
     public void write(HttpServletRequest request , HttpServletResponse response, @RequestParam Map<String, String> param)  throws IOException, ServletException {
         HttpSession session = request.getSession();
         int idx = Integer.parseInt(String.valueOf(session.getAttribute("idx")));
