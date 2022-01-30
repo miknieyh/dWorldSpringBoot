@@ -24,6 +24,8 @@ public class MainController {
 
     @Autowired
     private MemberService memberService;
+
+    @Autowired
     private BoardService boardService;
 
     @RequestMapping(value = "/main")
@@ -49,12 +51,27 @@ public class MainController {
         }
         Result<Member> result = memberService.profile(idx);
         model.addAttribute("m", result.getResultObject());
-        System.out.printf("idx : "+idx);
 
+        if (request.getParameter("flag") != null) {
+            if(request.getParameter("flag").equals("write_my")) {
+                return "write_my";
+            }else if(request.getParameter("flag").equals("write_group")) {
+                Result<List<Member>> gArr = memberService.readGroups(idx);
+                model.addAttribute("gArr",gArr.getResultObject());
+                return "group_select";
+            }//else if(request.getParameter("flag").equals("group_make")){
+//                dispatcher= request.getRequestDispatcher("group_make.jsp");
+//            }else if(request.getParameter("flag").equals("write_gd")) {
+//                dispatcher= request.getRequestDispatcher("write_gd.jsp");
+//
+//            }else if(request.getParameter("flag").equals("cal_my")) {
+//                dispatcher = request.getRequestDispatcher("cal_my.jsp");
+//            }
+        } else {
+            Result<List<Board>> boardResult = boardService.mainList(idx);
 
-        Result<List<Board>> boardResult = boardService.mainList(idx);
-
-        model.addAttribute("bArr", boardResult.getResultObject());
+            model.addAttribute("bArr", boardResult.getResultObject());
+        }
 
 
         return "main";

@@ -2,6 +2,7 @@ package com.example.dWorld.mapper;
 
 import com.example.dWorld.model.Board;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.jdbc.SQL;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -10,4 +11,12 @@ import java.util.List;
 public interface BoardMapper {
 
     List<Board> mainList(int idx) throws SQLException;
+
+    void insertBoard(String contents, int stat, int idx, int g_idx) throws SQLException;
+
+    int getDiaryIdx() throws SQLException;
+
+    void insertPhoto(String photo, int d_idx) throws SQLException;
+
+
 }

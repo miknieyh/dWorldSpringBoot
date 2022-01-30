@@ -28,7 +28,7 @@
 		style="height: 100%; background-color: WhiteSmoke;">
 		<div class="row">
 			<div class="col-8" style="background-color: white;">
-			<form action="writemy" method="post" enctype="multipart/form-data">
+			<form action="/write" method="post" enctype="multipart/form-data">
 				<table class="table table-sm">
 					<thead class="table-dark">
 						<tr>

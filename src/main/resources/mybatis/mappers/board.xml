@@ -4,13 +4,25 @@
 
 <mapper namespace="com.example.dWorld.mapper.BoardMapper">
 
-    <select id="profile" resultType="com.example.dWorld.model.Board">
+    <select id="mainList" resultType="com.example.dWorld.model.Board">
         select
                *
         from mainview
         where viewmemberidx = #{idx}
     </select>
-
-
+    <insert id="insertBoard" >
+        INSERT INTO
+            Diary(contents,wdate,stat,m_idx,g_idx)
+            VALUES (#{contents},sysdate,#{stat},#{idx},#{g_idx})
+    </insert>
+    <select id="getDiaryIdx" resultType="com.example.dWorld.model.Board">
+        SELECT IDX FROM(SELECT * FROM DIARY ORDER BY WDATE DESC )WHERE ROWNUM =1
+    </select>
+    <insert id="insertPhoto" >
+        INSERT INTO
+            PHOTO(photo,d_idx)
+            VALUES
+                   (#{photo},#{d_idx})
+    </insert>
 
 </mapper>

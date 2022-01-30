@@ -109,4 +109,18 @@ public class MemberServiceImpl implements MemberService {
         );
     }
 
+    @Override
+    public Result<List<Member>> readGroups(int idx) {
+        List<Member> memberList;
+        try {
+            memberList = memberMapper.readGroups(idx);
+            return ResultCode.Success.result(memberList);
+        } catch (SQLException e) {
+            return ResultCode.DBError.result();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResultCode.ETCError.result();
+        }
+    }
+
 }

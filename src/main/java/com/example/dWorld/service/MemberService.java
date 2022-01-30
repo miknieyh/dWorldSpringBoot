@@ -15,4 +15,5 @@ public interface MemberService {
     Result<Member> login(String id, String passwd);
 
     Result<Member> profile(int idx);
+    Result<List<Member>> readGroups(int idx);
 }

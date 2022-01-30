@@ -28,7 +28,17 @@
         WHERE
               IDX= #{idx}
     </select>
-
+    <select id="">
+        select
+               g.name,g.idx
+        from
+             groups g
+                 left join
+                 groups_member gm
+                     on
+                         g.idx = gm.g_idx
+        where m_idx =#{idx}
+    </select>
 
 
 </mapper>
