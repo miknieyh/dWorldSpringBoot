@@ -15,7 +15,7 @@
             Diary(contents,wdate,stat,m_idx,g_idx)
             VALUES (#{contents},sysdate,#{stat},#{idx},#{g_idx})
     </insert>
-    <select id="getDiaryIdx" resultType="com.example.dWorld.model.Board">
+    <select id="getDiaryIdx" resultType="int">
         SELECT IDX FROM(SELECT * FROM DIARY ORDER BY WDATE DESC )WHERE ROWNUM =1
     </select>
     <insert id="insertPhoto" >

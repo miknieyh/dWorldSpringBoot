@@ -30,7 +30,7 @@ public class WriteController extends AbstractController {
         int idx = Integer.parseInt(String.valueOf(session.getAttribute("idx")));
         String contents = param.get("content");
 
-        List<String> photo = null;
+        List<String> photo = new ArrayList<String>();
 
         // 파일 여러개 받는 거
 
@@ -71,9 +71,13 @@ public class WriteController extends AbstractController {
         }
 
         boardService.insertBoard(contents,stat,idx,g_idx);
-        int d_idx = boardService.getDiaryIdx().getResultObject();
-        System.out.println(d_idx);
-        boardService.insertPhoto(photo, d_idx);
+
+        if (photo.size()>0){
+            int d_idx = boardService.getDiaryIdx().getResultObject();
+            System.out.println(d_idx);
+            boardService.insertPhoto(photo, d_idx);
+        }
+
 
         response.sendRedirect("/main");
 

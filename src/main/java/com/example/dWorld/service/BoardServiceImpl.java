@@ -52,7 +52,7 @@ public class BoardServiceImpl implements BoardService{
     public Result<Integer> getDiaryIdx() {
         int d_idx = -1;
         try{
-            boardMapper.getDiaryIdx();
+            d_idx = boardMapper.getDiaryIdx();
             return ResultCode.Success.result(d_idx);
         }catch (SQLException e) {
             return ResultCode.DBError.result();
