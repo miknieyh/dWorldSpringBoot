@@ -19,3 +19,4 @@ misc.xml
 
 # Maven
 log/
+target/
