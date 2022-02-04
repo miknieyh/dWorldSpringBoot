@@ -28,9 +28,9 @@
         WHERE
               IDX= #{idx}
     </select>
-    <select id="">
+    <select id="myGroup" resultType="com.example.dWorld.model.Member">
         select
-               g.name,g.idx
+               g.name as groupname,g.idx as g_idx
         from
              groups g
                  left join

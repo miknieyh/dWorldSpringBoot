@@ -59,14 +59,14 @@ public class MainController {
                 Result<List<Member>> gArr = memberService.readGroups(idx);
                 model.addAttribute("gArr",gArr.getResultObject());
                 return "group_select";
-            }//else if(request.getParameter("flag").equals("group_make")){
-//                dispatcher= request.getRequestDispatcher("group_make.jsp");
-//            }else if(request.getParameter("flag").equals("write_gd")) {
-//                dispatcher= request.getRequestDispatcher("write_gd.jsp");
-//
-//            }else if(request.getParameter("flag").equals("cal_my")) {
-//                dispatcher = request.getRequestDispatcher("cal_my.jsp");
-//            }
+            }else if(request.getParameter("flag").equals("group_make")){
+                return "group_make";
+            }else if(request.getParameter("flag").equals("write_gd")) {
+                return "write_gd";
+
+            }else if(request.getParameter("flag").equals("cal_my")) {
+                return "mycal";
+            }
         } else {
             Result<List<Board>> boardResult = boardService.mainList(idx);
             model.addAttribute("bArr", boardResult.getResultObject());

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/top_login.jsp"%>
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
@@ -24,6 +24,7 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
+<%@ include file="./top_login.jsp"%>
 	<div class="container"
 		style="height: 100%; background-color: WhiteSmoke;">
 		<div class="row">
@@ -65,9 +66,9 @@
 				<div class="empty3"></div>
 
 			</div>
-			<%@ include file="/side.jsp" %>
+			<%@ include file="./side.jsp" %>
 		</div>
 	</div>
-	<%@ include file="/footer.jsp"%>
+	<%@ include file="./footer.jsp"%>
 </body>
 </html>

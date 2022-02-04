@@ -15,6 +15,6 @@ public interface MemberMapper {
 
     Member profile(int idx) throws SQLException;
 
-    List<Member> readGroups(int idx) throws SQLException;
+    List<Member> myGroup(int idx) throws SQLException;
 
 }

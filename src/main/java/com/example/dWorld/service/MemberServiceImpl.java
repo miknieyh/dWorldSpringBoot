@@ -113,7 +113,7 @@ public class MemberServiceImpl implements MemberService {
     public Result<List<Member>> readGroups(int idx) {
         List<Member> memberList;
         try {
-            memberList = memberMapper.readGroups(idx);
+            memberList = memberMapper.myGroup(idx);
             return ResultCode.Success.result(memberList);
         } catch (SQLException e) {
             return ResultCode.DBError.result();
