@@ -3,10 +3,13 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.dWorld.mapper.BoardMapper">
+    <select id="mainPhoto" resultType="String">
+        select photo from photo where d_idx = #{idx}
 
+    </select>
     <select id="mainList" resultType="com.example.dWorld.model.Board">
         select
-               *
+           *
         from mainview
         where viewmemberidx = #{idx}
     </select>

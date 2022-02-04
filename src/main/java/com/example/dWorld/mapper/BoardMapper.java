@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.jdbc.SQL;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Mapper
@@ -18,5 +19,6 @@ public interface BoardMapper {
 
     void insertPhoto(String photo, int d_idx) throws SQLException;
 
+    List<String> mainPhoto(int idx) throws SQLException;
 
 }

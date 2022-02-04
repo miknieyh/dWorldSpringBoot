@@ -47,10 +47,9 @@
 							<tr>
 								<td>${b.wdate}</td>
 							</tr>
-
 							<c:forEach var="photo" items="${b.photo}">
 								<tr>
-									<td><img alt="photo" src="./upload/${photo}"
+									<td><img alt="photo" src="../upload/${photo}"
 										style="width: 800px;"></td>
 								</tr>
 							</c:forEach>

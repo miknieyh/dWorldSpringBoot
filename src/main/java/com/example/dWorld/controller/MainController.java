@@ -69,7 +69,6 @@ public class MainController {
 //            }
         } else {
             Result<List<Board>> boardResult = boardService.mainList(idx);
-
             model.addAttribute("bArr", boardResult.getResultObject());
         }
 

@@ -6,6 +6,7 @@ import lombok.*;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -19,7 +20,7 @@ public class Board {
     private int stat;
     private String writer;
     private boolean mine;
-    private ArrayList<String> photo;
+    private List<String> photo;
     private String groupname;
 
 

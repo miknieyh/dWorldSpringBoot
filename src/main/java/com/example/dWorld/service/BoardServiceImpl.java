@@ -16,6 +16,8 @@ public class BoardServiceImpl implements BoardService{
     @Autowired
     BoardMapper boardMapper;
 
+
+
     /**
      * 
      * @see com.example.dWorld.service.BoardService#mainList(int) 
@@ -26,6 +28,13 @@ public class BoardServiceImpl implements BoardService{
         List<Board> boardList;
         try{
             boardList = boardMapper.mainList(idx);
+            for (int i = 0 ; i < boardList.size(); i++){
+               int d_idx= boardList.get(i).getIdx() ;
+
+               List<String> photos = boardMapper.mainPhoto(d_idx);
+               boardList.get(i).setPhoto(photos);
+
+            }
             return ResultCode.Success.result(boardList);
         }catch (SQLException e) {
             return ResultCode.DBError.result();
